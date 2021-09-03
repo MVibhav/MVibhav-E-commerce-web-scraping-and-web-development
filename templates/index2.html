@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Web-Scraper</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='xyz.css')}}">
+</head>
+	<body>
+		<div class="container">
+			<nav>
+				<ul class="main-nav">
+					<li>{{display_website_name}}</li>
+				</ul>
+			</nav>
+
+			<form action="/info" method="post">
+				<label for="dropdown">What would you like to scrap :    </label>
+				<select name="dropdown" id="dropdown" class="dropdown-options">
+					<option value="--select an option--">--Select an option--</option>
+					{% for i in product_categories %}
+					<option value="{{i}}">{{i}}</option>
+					{% endfor %}
+				</select>
+				
+				
+				<br><br>
+				<input class="submit-btn" type="submit" value="Submit">
+			</form>
+		</div>
+		
+		
+	</body>
+	</html>

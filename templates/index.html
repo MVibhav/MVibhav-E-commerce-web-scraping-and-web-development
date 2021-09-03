@@ -1,0 +1,100 @@
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CBD Web Scrapper</title>
+	<link rel="shortcut icon" href="../img/star.png" type="image/png">
+	<!-- Bootstrap CDN down below --> 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<style type="text/css">
+		body {
+	background-image: url('https://images.unsplash.com/photo-1491582325207-80d06869fb3d?dpr=1&auto=compress,format&fit=crop&w=755&h=&q=80&cs=tinysrgb&crop=');
+	background-size: cover;
+	background-position: center;
+	padding-top: 70px;
+}
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+.jumbotron {
+	color: #2c3e50;
+	background-color: #ecf0f1;
+	border: 1px solid #D6DBDF;
+	margin-top: 10px;
+	margin-bottom: 2px;
+}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<h1>CDB Web Scrapper</h1>
+			<p>Select a website and scraper all the details of the products of your choosing</p>
+		</div>
+		
+		<div class="row">
+			<div class="col-lg-4 col-sm-6">
+				<div class="thumbnail">
+					<a href="{{url_for('home', id='Green Roads')}}">
+					<img style="width:300px;height:300px;" src="https://theinteractivemedia.com/wp-content/uploads/2014/03/Green-Roads-Logo.jpg" />
+					<div name="dropdown1" class="desc" data-value="Green Roads"><center><b>Green Roads</b></center></div>
+					</a>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-sm-6">
+				<div class="thumbnail">
+					<a href="{{url_for('home', id='CBDistillery')}}">
+					<img style="width:300px;height:300px;" src="https://mma.prnewswire.com/media/1165858/New_Logo.jpg?p=publish" />
+					<div name="dropdown1" class="desc" data-value="CBDistillery"><center><b>CBDistillery</b></center></div>
+					</a>
+				</div>
+			</div>
+			<div class="col-lg-4 col-sm-12">
+				<div class="thumbnail">
+					<a href="{{url_for('home', id='Lazarus Naturals')}}">
+					<img style="width:300px;height:300px;" src="https://shelbyreport.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2020/05/lazarus-naturals-logo.jpg" />
+					<div name="dropdown1" class="desc" data-value="Lazarus Naturals"><center><b>Lazarus Naturals</b></center></div>
+					</a>
+				</div>
+			</div>
+			<div class="col-lg-4 col-sm-6">
+				<div class="thumbnail">
+					<a href="{{url_for('home', id='CBDfx')}}">
+					<img style="width:300px;height:300px;" src="https://mms.businesswire.com/media/20190904005256/en/741435/5/CBDfx_Logo_BlackTM.jpg?download=1" />
+					<div name="dropdown1" class="desc" data-value="CBDfx"><center><b>CBDfx</b></center></div>
+					</a>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-sm-6">
+				<div class="thumbnail">
+					<a href="{{url_for('home', id='Diamond CBD')}}">
+					<img style="width:300px;height:300px;" src="https://www.cannabiscouponcodes.com/wp-content/themes/couponpress/thumbs/diamond-cbd-coupon-code.jpg" />
+					<div name="dropdown1" class="desc" data-value="Diamond CBD"><center><b>Diamond CBD</b></center></div>
+					</a>
+				</div>
+			</div>
+
+
+	<!-- JQuery CDN --> 
+	<script src="http://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+	<!-- JavaScript Bootstrap CDN --> 
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<!-- <script type="text/javascript">
+		$(document).ready(function(){
+			$('.desc').on('click', function(){
+				var website_name = $(this).data('value');
+				$ajax({
+					url: "/home",
+					type: "post",
+					data: {website_name: website_name},
+				});
+			});
+		});
+	</script> -->
+</body>
+</html>

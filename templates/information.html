@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WEB SCRAPER</title>
+	<style>
+		body{
+  margin: auto 0;
+  background-image: url('https://images.unsplash.com/photo-1491582325207-80d06869fb3d?dpr=1&auto=compress,format&fit=crop&w=755&h=&q=80&cs=tinysrgb&crop=');
+  background-size: cover;
+  background-position: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.main-nav {
+  display: flex;
+  list-style: none;
+  font-size: 1em;
+  margin: 0;
+  color: black;
+  opacity: 0.8;
+  background-color: #C0C0C0;
+}
+.dropdown-options option{
+    height: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .main-nav {
+    font-size: 0.7em;
+    padding: 0;
+  }
+}
+li {
+  padding: 20px;
+  font-size: 30px;
+  color: black;
+  margin-left: 40%;
+  background-color: #C0C0C0;
+}
+form{
+    margin-left: 20%;
+    padding-left: 30px;
+    margin-right: 20%;
+    padding-top: 5%;
+    padding-bottom: 5px;
+    font-size: 25px;
+    color: black;
+    margin-top: 10%;
+    background-color: #778899;
+}
+.submit-btn {
+  background-color:#C0C0C0;
+  padding: 20px;
+  border-radius: 25px;
+  margin-left: 40%;
+  margin-bottom:20px;
+  color: black;
+  margin-top: 35px;
+  border: 2px solid #008CBA;
+}
+
+.submit-btn:hover {
+  background-color: #DCDCDC;
+  color: black;
+}
+	</style>
+</head>
+<body>
+	<div class="container">
+			<nav>
+				<ul class="main-nav">
+					<li>{{display_website_name}}</li>
+				</ul>
+			</nav>
+			<br> <br>
+	<table border=4 style="background-color:#FFFFE0">
+		<thead>
+			<tr style="background-color:#BDB76B;color:#ffffff;">
+				<th scope="col">NAME</th>
+				<th scope="col">PRICE</th>
+				<th scope="col">RATING</th>
+				<th scope="col">NUMBER OF REVIEWS</th>
+				<th scope="col">DESCRIPTION</th>
+			</tr>
+		</thead>
+		<tbody>
+				{% if product_names|length==1 %}
+				<tr>
+				<td>{{product_names[0]}}</td>
+				<td>{{Price}}</td>
+				<td>{{Rating}}</td>
+				<td>{{Reviews}}</td>	
+				<td>{{Description}}</td>
+				</tr>
+
+
+
+				{% else %}
+				{% for i in range(product_names|length) %}
+				<tr>
+					<td>
+					{{product_names[i]}}
+					</td>
+					<td>
+					{{Price[i]}}
+					</td>
+
+					<td>
+					{{Rating[i]}}
+					</td>
+					<td>
+						{{Reviews[i]}}
+					</td>
+					<td>
+					{{Description[i]}}
+					</td>
+				</tr>
+				{% endfor %}
+				{% endif %}
+
+		</tbody>
+	</table>
+	<a href="{{url_for('download_csv')}}">download</a>
+<!-- <form>
+	<input class="submit-btn" type="submit" value="Export as CSV">
+
+</form> -->
+</body>
+</html>
